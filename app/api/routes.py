@@ -58,10 +58,10 @@ def get_single_car(current_user_token, id):
 @token_required
 def update_car(current_user_token,id):
     car = Car.query.get(id) 
-    car.name = request.json['car_make']
-    car.email = request.json['car_model']
-    car.phone_number = request.json['car_year']
-    car.address = request.json['car_mileage']
+    car.make = request.json['car_make']
+    car.model = request.json['car_model']
+    car.year = request.json['car_year']
+    car.mileage = request.json['car_mileage']
     car.user_token = current_user_token.token
 
     db.session.commit()
